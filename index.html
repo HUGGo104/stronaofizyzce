@@ -1,0 +1,157 @@
+<!DOCTYPE.html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Strona dotycząca fizyki</title>    
+        <style type="text/css">
+        
+            body
+		{
+			font-family: 'Courier New', monospace;
+			font-size: 130%;
+			background-image: url("foto/tlo.jpg"); 
+			color: white;
+		}
+            .tyt
+            {
+            color: white;
+            font-size: 50px;
+            font-weight: 700;  
+            font-style: italic;
+            }
+            .wst
+            {
+            font-size: 30px;
+            font-weight: 500;
+            
+            }
+            .tabelaWst
+		    {
+			display: inline-block;
+			width: 90%;
+			background: black;
+			border-radius: 8px;
+			font-size: 100%;
+			margin-bottom: 2%;
+		    }
+            .przy
+            {
+            font-size: 25px;
+            font-weight: 500;
+            }
+            .graw {
+            float: left;
+            width: 300px;
+            height: 325px;
+            background: black;
+            }
+            span
+            {
+            display:block;
+            }
+            #kalk
+            {
+            background: black;
+            margin: 0 auto;
+            padding: 35px 25px 35px 25px;
+            width: 300px;
+            }
+        
+        
+        </style>
+
+<script type="text/javascript">
+    function kalk()
+    {   
+        var pla = document.getElementById("planeta").value;
+        console.log(pla);
+        var wg = document.getElementById("waga").value;
+        
+        if(pla == "Merkury")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 0.37;
+        }
+        else if(pla == "Wenus")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 0.9;
+        }
+        else if(pla == "Mars")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 0.37;
+        }
+        else if(pla == "Jowisz")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 2.52;
+        }
+        else if(pla == "Saturn")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 1.06;
+        }
+        else if(pla == "Uran")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 0.88;
+        }
+        else if(pla == "Neptun")
+        {
+            var waga=document.getElementById("newwaga");
+            waga.innerHTML=wg * 1.12;
+        }
+        
+    }
+
+    </script>
+    
+    </head>
+    <body>
+        <center><h1 class="tyt">Strona o fizyce.</h1></center>
+        <hr>
+        <center><div class="tabelaWst">
+        <p class="wst">Niejeden z nas napewno marzył o locie w kosmos i eksploracji planet. Wraz z rozwojem nauki możemy poznawać kosmos i dowiadywać się wielu informacji bez ruszania się z domu takich jak zawartość atmosferyczna czy siła grawitacji. Dlatego na tej stronie dowiesz się ile ważyłbyś na innej planecie.</p>
+        </div></center>
+
+        <div class="graw"> 
+            <p class="przy">Przyciąganie na planetach:</p>
+            <ul>
+        <li><u>Merkury:</u> 3,7 m/s²</li>
+        <li><u>Wenus:</u> 8,87 m/s²</li>
+        <li><u>Ziemia:</u> 9,8 m/s²</li>
+        <li><u>Mars:</u> 3,72 m/s²</li>
+        <li><u>Jowisz:</u> 24,79 m/s²
+        </li>
+        <li><u>Saturn:</u> 10,44 m/s²</li>
+        <li><u>Uran:</u> 8,87 m/s²</li>
+        <li><u>Neptun:</u> 11,15 m/s²</li>
+            </ul> 
+        </div>
+
+        <form id="kalk">
+
+            <div>
+                Waga: <input style="width: 40%;" type=number id=waga value=0 min="0" max="200">
+                <br>
+                Planeta: <select id="planeta">
+                 <option id="Merkury">Merkury</option>
+                 <option id="Wenus">Wenus</option>
+                 <option id="Mars">Mars</option>
+                 <option id="Jowisz">Jowisz</option>
+                 <option id="Saturn">Saturn</option>
+                 <option id="Uran">Uran</option>
+                 <option id="Neptun">Neptun</option>
+               </select>
+    
+               <button type="button" onClick="kalk()">Sprawdź</button>
+               <p>Twoja waga na planecie: </p>
+               <p id="newwaga" >0 </p>
+            </div>
+          </form>
+        
+    </body>
+
+
+</html>
